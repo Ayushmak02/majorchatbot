@@ -37,22 +37,23 @@ if "chat_session" not in st.session_state:
 def follows_guidelines(prompt):
     # Define the guidelines
     guidelines = """
-    Guidelines:
-    1. Ask questions related to neurosciences.
-    2. Provide clear and concise context for the question.
-    3. Avoid asking multiple questions in one prompt.
-    4. Limit the length of the question to a few sentences.
+    You are NeuroScan, an automated chatbot for people wanting to know about ADHD(Attention Deficit Hyperactivity Disorder). 
+    You first greet the user, then ask them if they have ADHD or not, and then asks what do they want to learn about ADHD. 
+    You answer their questions, or help them if they need help about any topic on ADHD then summarize it and check for a final time if the user wants to ask anything else. 
+    If they ask , you answer them again. 
+    Finally you thank them for using the chatbot.
+    You respond in a short, very conversational friendly style.
     """
 
     # Check if the prompt follows the guidelines
-    # You can customize this based on your specific guidelines
-    if "neuroscience" in prompt.lower():
-        if len(prompt.split()) <= 20:  # Example: Limiting the length of the question to 20 words
-            return True, guidelines
-        else:
-            return False, "Your question is too long. Please limit it to a few sentences."
-    else:
-        return False, "Please ask a question related to neurosciences."
+    # # You can customize this based on your specific guidelines
+    # if "neuroscience" in prompt.lower():
+    #     if len(prompt.split()) <= 20:  # Example: Limiting the length of the question to 20 words
+    #         return True, guidelines
+    #     else:
+    #         return False, "Your question is too long. Please limit it to a few sentences."
+    # else:
+    #     return False, "Please ask a question related to neurosciences."
 
 
 # Display the chatbot's title on the page
