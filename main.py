@@ -13,6 +13,22 @@ st.set_page_config(
     page_title="NeuroScan Prompt",
     page_icon=":brain:",  # Favicon emoji
     layout="centered",  # Page layout option
+    page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
+</style>
+"""
+
+    st.markdown(page_bg_img, unsafe_allow_html=True)
 )
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
